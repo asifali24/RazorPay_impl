@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: razorpayClone
+  datasource:
+    url: jdbc:postgresql://localhost:5432/razorpay_db
+    username: asif
+    password: razarpay@12345
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
