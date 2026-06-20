@@ -39,7 +39,7 @@ public class AuthServiceImpl implements AuthService {
                 .businessType(merchant.businessType())
                 .build();
 
-        newMerchant = merchantRepository.save(newMerchant); // created before b/w we need merchant is
+        newMerchant = merchantRepository.save(newMerchant); // created before b/w we need merchant id
 
         AppUser owner = AppUser.builder()
                 .merchant(newMerchant)
