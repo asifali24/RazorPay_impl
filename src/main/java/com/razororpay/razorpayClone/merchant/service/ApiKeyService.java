@@ -11,4 +11,10 @@ public interface ApiKeyService {
     ApiKeyCreateResponse createApiKey(CreateApiKeyRequest request, UUID merchantId);
 
     List<ApiKeyResponse> getMerchantApiKeyList(UUID merchantId);
+
+    void revokeApiKey(UUID merchantId, UUID keyId);
+
+    ApiKeyCreateResponse rotateApiKey(UUID merchantI, UUID keyId);
+
+
 }

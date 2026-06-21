@@ -7,6 +7,7 @@ import com.razororpay.razorpayClone.merchant.dto.request.MerchantSignupRequest;
 import com.razororpay.razorpayClone.merchant.dto.response.MerchantSignupResponse;
 import com.razororpay.razorpayClone.merchant.entity.AppUser;
 import com.razororpay.razorpayClone.merchant.entity.Merchant;
+import com.razororpay.razorpayClone.merchant.mapper.AuthMapper;
 import com.razororpay.razorpayClone.merchant.repository.AppUserRepository;
 import com.razororpay.razorpayClone.merchant.repository.MerchantRepository;
 import com.razororpay.razorpayClone.merchant.service.AuthService;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 public class AuthServiceImpl implements AuthService {
     private final AppUserRepository appUserRepository;
     private final MerchantRepository merchantRepository;
+    private final AuthMapper authMapper;
 
 
     @Override
@@ -52,13 +54,19 @@ public class AuthServiceImpl implements AuthService {
 
 
 
-        return new MerchantSignupResponse(
-                newMerchant.getId() ,
-                newMerchant.getName(),
-                newMerchant.getEmail(),
-                newMerchant.getBusinessName(),
-                newMerchant.getBusinessType(),
-                newMerchant.getStatus()
-                );
+        // without mapper
+
+//        return new MerchantSignupResponse(
+//                newMerchant.getId() ,
+//                newMerchant.getName(),
+//                newMerchant.getEmail(),
+//                newMerchant.getBusinessName(),
+//                newMerchant.getBusinessType(),
+//                newMerchant.getStatus()
+//                );
+
+
+        //with mapper
+        return authMapper.toSignupResponse(newMerchant);
     }
 }
