@@ -13,7 +13,7 @@ import java.util.List;
 public interface PaymentMapper {
 
 //    @Mapping(target = "orderId", source = "order.id")
-//    PaymentResponse toResponse(Payment payment);
+    PaymentResponse toResponse(Payment payment);
 
 //    @Mapping(target = "orderId", source = "order.id")
     List<PaymentResponse> toResponseList(List<Payment> paymentList);
