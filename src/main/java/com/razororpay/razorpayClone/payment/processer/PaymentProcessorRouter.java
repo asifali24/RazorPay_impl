@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 @Component
-public class paymentProcessorRouter {
+public class PaymentProcessorRouter {
 
     private Map<PaymentMethod , PaymentProcessor> paymentMethodPaymentProcessorMap;
 
